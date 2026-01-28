@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { type Project, formatProjectDate } from "../lib/projects";
+import { type Project, formatProjectDate } from "../lib/project-utils";
 
 interface ProjectCardProps {
   project: Project;

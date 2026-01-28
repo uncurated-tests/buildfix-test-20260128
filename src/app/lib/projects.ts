@@ -1,15 +1,13 @@
 import "server-only";
 
-export interface Project {
-  id: string;
-  title: string;
-  description: string;
-  stars: number;
-  language: string;
-  updatedAt: Date;
-}
+import type { Project } from "./project-utils";
+
+// Re-export shared types and utilities for convenience
+export { type Project, formatProjectDate } from "./project-utils";
 
 // Fetch featured projects from our API
+// This function is server-only because it performs data fetching
+
 export async function getFeaturedProjects(): Promise<Project[]> {
   // In production this would be an actual API call
   await new Promise((resolve) => setTimeout(resolve, 50));
@@ -40,11 +38,4 @@ export async function getFeaturedProjects(): Promise<Project[]> {
       updatedAt: new Date("2026-01-25"),
     },
   ];
-}
-
-export function formatProjectDate(date: Date): string {
-  return date.toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-  });
 }
