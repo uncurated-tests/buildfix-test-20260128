@@ -5,8 +5,8 @@ export default function Home() {
   const currentUser = {
     name: "John Doe",
     email: "john@example.com",
-    role: "admin",
-    lastLogin: "2026-01-28",
+    role: "admin" as const,
+    lastLogin: new Date("2026-01-28"),
   };
 
   return (
