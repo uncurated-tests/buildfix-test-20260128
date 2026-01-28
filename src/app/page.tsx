@@ -1,5 +1,6 @@
 import Image from "next/image";
 import UserProfile from "./components/UserProfile";
+import FeaturedProjects from "./components/FeaturedProjects";
 
 export default function Home() {
   const currentUser = {
@@ -18,6 +19,7 @@ export default function Home() {
           role={currentUser.role}
           lastLogin={currentUser.lastLogin}
         />
+        <FeaturedProjects />
         <Image
           className="dark:invert"
           src="/next.svg"
